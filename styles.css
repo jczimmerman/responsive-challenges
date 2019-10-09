@@ -38,7 +38,14 @@ aside {
  * is 750px or larger. It should be below the content on
  * smaller screen sizes.
  */
-/* @media <condition?> {} */
+@media only screen and (min-width: 750px) {
+  .container{
+    display: flex;
+  }
+  li{
+    list-style: none;
+  }
+}
 
 
 /**
@@ -46,7 +53,20 @@ aside {
  * When the screen gets larger than 900px, try to turn the
  * unordered list into two columns of list items.
  */
-/* @media <condition?> {} */
+@media only screen and (min-width: 900px) {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li{
+    width: 50%;
+    list-style: none;
+  }
+
+}
 
 
 /**
@@ -55,7 +75,9 @@ aside {
  * to 1000px wide using the max-width property. Do you need
  * a media query for this?
  */
-/* ??? */
+.container {
+  max-width: 1000px;
+}
 
 
 /**
@@ -64,7 +86,11 @@ aside {
  * padding from the body element so the content becomes full
  * width.
  */
-/* @media <condition?> {} */
+@media only screen and (max-width: 500px) {
+  .content {
+    padding: 0px;
+  }
+}
 
 
 /**
@@ -72,7 +98,11 @@ aside {
  * Let's get useless. When the screen is between 800px and
  * 810px, rotate the contents of the entire page upside down.
  */
-/* @media <condition?> {} */
+@media only screen and (min-width: 800px) and (max-width: 810px) {
+  body {
+    transform: rotate(180deg);
+  }
+}
 
 
 /**
@@ -81,5 +111,13 @@ aside {
  * turn all the text content yellow and all the backgrounds
  * blue. Mwahahaha!
  */
-/* @media <condition?> {} */
-
+@media print {
+  .content,
+  h1,
+  li {
+    color: yellow;
+  }
+  *{
+    background-color: blue;
+  }
+}
